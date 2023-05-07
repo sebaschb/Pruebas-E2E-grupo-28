@@ -1,0 +1,10 @@
+node_modules
+cypress/videos
+cypress/screenshots
+pnpm-lock.yaml
+reports
+ghost/*
+kraken/reports
+cypress/videos
+cypress/screenshots
+.vscode

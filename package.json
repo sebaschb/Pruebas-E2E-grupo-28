@@ -1,0 +1,26 @@
+{
+  "name": "e2e-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ghost:prepare": "cd ghost && ghost install 3.41.1 --local --force",
+    "kraken:execution": "cd kraken && kraken-node run",
+    "cypress:runner": "cypress open --e2e --browser chrome",
+    "cypress:execution": "cypress run --spec cypress/e2e/features/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^17.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@shelex/cypress-allure-plugin": "^2.38.5",
+    "cypress": "^12.11.0",
+    "esbuild": "^0.17.18",
+    "kraken-node": "^1.0.24"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  }
+}
