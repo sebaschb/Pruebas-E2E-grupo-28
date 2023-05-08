@@ -5,29 +5,9 @@ import { tag } from "../../pages/Tag.Page";
 
 let number = Math.floor(Math.random() * 100).toString();
 
-const { 
-  username, 
-  password 
-} = Cypress.env("AdminUser");
-const { 
-  authLoginRoute, 
-  dashboardRoute,
-  tagRoute,
-  createTagRoute
-} =
+const { username, password } = Cypress.env("AdminUser");
+const { authLoginRoute, dashboardRoute, tagRoute, createTagRoute } =
   Cypress.env("endpoint");
-
-Given("A web browser is at the ghost login page", () => {
-  cy.visit("/");
-});
-
-When(
-  "A user enters the username, the password, and clicks on the login button",
-  () => {
-    cy.url().should("contain", authLoginRoute);
-    login.submitLogin(username, password);
-  }
-);
 
 When("The user navigates to the tag section", () => {
   cy.url().should("contain", dashboardRoute);

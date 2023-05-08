@@ -47,6 +47,9 @@ Ingrese al link http://localhost:2368/ghost y configure la pagina con los siguie
 - Pasword: 2TiSXG9VVvECnp
   (Las demas configuraciones no son de mucha importancia)
 
+En el apartado de "Invite staff users"
+Ponga una direccion de correo con formato valido (example@correo.prueba)
+
 ## Uso
 
 Con la aplicacion de ghost funcionando y corriendo. Ahora se pueden ejecutar las pruebas E2E

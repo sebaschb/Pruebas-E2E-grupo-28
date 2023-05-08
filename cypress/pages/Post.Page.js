@@ -39,6 +39,7 @@ class Post {
   }
 
   clickConfirmDeletePostButton() {
+    cy.wait(1000);
     this.get.confirmDeletePostButton().click();
   }
 }

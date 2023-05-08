@@ -16,4 +16,4 @@ Feature: Delete post
         When The user navigates to the post section
         When The user chooses the first post from the post list
         When The user deletes the post
-        The user logs out.
+        Then The post is delete successfully
