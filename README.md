@@ -1,6 +1,4 @@
-# Nombre del Proyecto
-
-Breve descripción o introducción al proyecto.
+# Pruebas-E2E-grupo-28
 
 ## Tabla de contenidos
 
@@ -67,4 +65,6 @@ npm run cypress:execution
 npm run cypress:runner //Esta opcion es para abrir la interfaz de cypress
 ```
 
-## Distribucion
+## Notas importantes
+
+Todos los miembros del equipo contribuyeron al código, excepto Andrés Silva.
