@@ -41,7 +41,7 @@ npm run ghost:prepare //este comando inicia la configuracion del ghost con la ve
 
 2. Configuracion inicial de ghost: Para este paso es necesario ir a la pagina de administrador de ghost: http://localhost:2368/ghost (Es importante el puerto para su correcto funcionamiento)
 
-Ingrese al link http://localhost:2368/ghost y configure la pagina con los siguientes datos:
+Ingrese al link [http://localhost:2368/ghost ](http://localhost:2368/ghost/#/signin)y configure la pagina con los siguientes datos:
 
 - Correo: c.wilchesv@uniandes.edu.co
 - Pasword: 2TiSXG9VVvECnp
