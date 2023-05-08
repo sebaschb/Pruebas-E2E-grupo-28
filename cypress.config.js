@@ -38,6 +38,8 @@ module.exports = defineConfig({
       dashboardRoute: "/#/site",
       postRoute: "/#/post",
       createPostRoute: "/#/editor/post",
+      tagRoute: "/#/tags/",
+      createTagRoute: "/#/tags/new",      
     },
   },
 });
