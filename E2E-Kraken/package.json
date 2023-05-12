@@ -1,0 +1,19 @@
+{
+  "name": "e2e-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "kraken:execution": "kraken-node run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.17.18",
+    "kraken-node": "^1.0.24"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  }
+}
