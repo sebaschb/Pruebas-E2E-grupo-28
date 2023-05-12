@@ -2,7 +2,7 @@ Feature: Editar tag
 
 @user1 @web
 Scenario: Editar el nombre del tag creado
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -35,7 +35,7 @@ Scenario: Editar el nombre del tag creado
 
 @user2 @web
 Scenario: Editar el slug del tag creado
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -66,7 +66,7 @@ Scenario: Editar el slug del tag creado
 
 @user3 @web
 Scenario: Editar la descripcion del tag creado
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -97,7 +97,7 @@ Scenario: Editar la descripcion del tag creado
 
 @user4 @web
 Scenario: Editar color del tag creado
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds

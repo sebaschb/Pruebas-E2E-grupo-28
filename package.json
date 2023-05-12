@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ghost:prepare": "mkdir ghost && cd ghost && ghost install 3.41.1 --local --force",
     "kraken:execution": "cd kraken && kraken-node run",
     "cypress:runner": "cypress open --e2e --browser chrome",
     "cypress:execution": "cypress run --spec cypress/e2e/features/*",
