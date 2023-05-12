@@ -1,67 +1,59 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import { login } from "../../pages/Login.Page";
-import { home } from "../../pages/Home.Page";
+import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { tag } from "../../pages/Tag.Page";
 
 let number = Math.floor(Math.random() * 100).toString();
 
-const { username, password } = Cypress.env("AdminUser");
-const { authLoginRoute, dashboardRoute, tagRoute, createTagRoute } =
+const { dashboardRoute, tagRoute } =
   Cypress.env("endpoint");
 
 When("The user navigates to the tag section", () => {
   cy.url().should("contain", dashboardRoute);
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute);
+  tag.clickTagModule();
 });
 
 When("The user creates a new tag", () => {
-  cy.visit(createTagRoute);
-  cy.url().should("contain", createTagRoute);
+  tag.clickCreateTag();
   tag.typeTagName("Mi tag número " + number);
   tag.clickSaveTag();
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute);
+  tag.clickTagModule();
 });
 
 When("The user modifies the name of the created tag", () => {
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute + "mi-tag-numero-" + number);
+  tag.clickCreatedRowTag("Mi tag número " + number);
   tag.typeTagName(" editado");
   tag.clickSaveTag();
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute);
+  tag.clickTagModule();
 });
 
 When("The user modifies the slug of the created tag", () => {
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute + "mi-tag-numero-" + number);
+  tag.clickCreatedRowTag("Mi tag número " + number);
   tag.typeTagSlug("-editado-" + number);
   tag.clickSaveTag();
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute);
+  tag.clickTagModule();
 });
 
 When("The user modifies the description of the created tag", () => {
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute + "mi-tag-numero-" + number);
-  tag.typeTagDescription("Esta es la descripción de mi tag " + nombreTag);
+  tag.clickCreatedRowTag("Mi tag número " + number);
+  tag.typeTagDescription("Esta es la descripción de mi tag");
   tag.clickSaveTag();
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute);
+  tag.clickTagModule();
 });
 
 When("The user modifies the color of the created tag", () => {
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute + "mi-tag-numero-" + number);
+  tag.clickCreatedRowTag("Mi tag número " + number);
   tag.typeTagColor("4FB5ED");
   tag.clickSaveTag();
-  cy.visit(tagRoute);
-  cy.url().should("contain", tagRoute);
+  tag.clickTagModule();
 });
 
-Then("The user logs out.", () => {
-  home.viewButtonUserInfo();
-  home.clickButtonUserInfo();
-  home.clickButtonLogOut();
+Then("The user delete the tag created.", () => {
+  tag.clickCreatedRowTag("Mi tag número " + number);
+  tag.clickDeleteTag();
+  tag.clickConfirmDeleteTag();
+});
+
+Then("The user delete the tag created and name edited.", () => {
+  tag.clickCreatedRowTag("Mi tag número " + number + " editado");
+  tag.clickDeleteTag();
+  tag.clickConfirmDeleteTag();
 });
