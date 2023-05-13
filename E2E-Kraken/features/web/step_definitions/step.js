@@ -2,17 +2,17 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('#ember8');
+    let element = await this.driver.$('input[name="identification"]');
     return await element.setValue(email);
 });
 
 When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('#ember10');
+    let element = await this.driver.$('input[name="password"]');
     return await element.setValue(password);
 });
 
-When('I click next', async function() {
-    let element = await this.driver.$('#ember12');
+When('I sign in', async function() {
+    let element = await this.driver.$('[class*="login"] span');
     return await element.click();
 })
 
@@ -32,7 +32,7 @@ When('I edit the page content {kraken-string}', async function(title) {
 When('I publish the page', async function () {
     let publishDropdown = await this.driver.$(".ember-basic-dropdown-trigger");
     await publishDropdown.click();
-    let publishButton = await this.driver.$(".gh-publishmenu-button");
+    let publishButton = await this.driver.$('.gh-publishmenu-button');
     await publishButton.click();
 })
 
@@ -48,7 +48,7 @@ When('I go to page {kraken-string}', async function (title) {
 
 When('I edit the title', async function() {
     let title = "new page title v2";
-    let elementTitle = await this.driver.$('.gh-editor-title');
+    let elementTitle = await this.driver.$('textarea[class="gh-editor-title ember-text-area gh-input ember-view"]');
     await elementTitle.setValue(title);
     return await elementTitle.setValue(title);
 })
@@ -67,9 +67,10 @@ When('I edit the page url', async function() {
 })
 
 When('I make the page featured', async function() {
-    let element = await this.driver.$(".checkbox");
-    let element2 = await this.driver.$(".settings-menu-header");
+    let element = await this.driver.$('.checkbox');
+    element.scrollIntoView(false);
     await element.click();
+    let element2 = await this.driver.$(".settings-menu-header");
     return await element2.click();
 })
 
