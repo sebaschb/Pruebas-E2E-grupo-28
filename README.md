@@ -6,6 +6,7 @@
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Distribucion](#Distribucion)
+- [Escenarios](#Escenarios)
 
 ## Requisitos
 
@@ -79,3 +80,87 @@ npm run cypress:runner //Esta opcion es para abrir la interfaz de cypress
 ## Notas importantes
 
 Todos los miembros del equipo contribuyeron al código, excepto Andrés Silva.
+
+## Escenarios
+|Funcionalidad   |Escenario   |
+|---|---|
+|Editar post|E1|
+|Editar post|E2|
+|Editar post|E3|
+|Editar post|E4|
+|Editar página|Editar el título de una página creada:
+1. Autenticación en ghost como administrador.
+2. Listar las páginas creadas.
+3. Crear una nueva página.
+4. Verificar la correcta creación de la página.
+5. Editar el título de la página creada.
+6. Verificar que se hayan guardado los cambios correctamente.|
+|Editar página|Editar la descripción de una página creada:
+1. Autenticación en ghost como administrador.
+2. Listar las páginas creadas.
+3. Crear una nueva página.
+4. Verificar la correcta creación de la página.
+5. Editar la descripción de la página creada.
+6. Verificar que se hayan guardado los cambios correctamente.|
+|Editar página|Editar la url de una página creada:
+1. Autenticación en ghost como administrador.
+2. Listar las páginas creadas.
+3. Crear una nueva página.
+4. Verificar la correcta creación de la página.
+5. Editar la url de la página creada.
+6. Verificar que se hayan guardado los cambios correctamente.|
+|Editar página|Editar una página creada y configurarla como featured page:
+1. Autenticación en ghost como administrador.
+2. Listar las páginas creadas.
+3. Crear una nueva página.
+4. Verificar la correcta creación de la página.
+5. Editar la página y hacerla featured.
+6. Verificar que se hayan guardado los cambios correctamente.|
+|Editar tag|Editar el nombre del tag creado:
+1. Autenticación en ghost.
+2. Entrar al módulo de tags.
+3. Crear nuevo tag.
+4. Ver el listado de los tags.
+5. Seleccionar el tag creado.
+6. Editar el nombre del tag creado.
+7. Cerrar sesión.|
+|Editar tag|Editar el slug del tag creado:
+1. Autenticación en ghost.
+2. Entrar al módulo de tags.
+3. Crear nuevo tag.
+4. Ver el listado de los tags.
+5. Seleccionar el tag creado.
+6. Editar el slug del tag creado.
+7. Cerrar sesión.|
+|Editar tag|Editar la descripción del tag creado:
+1. Autenticación en ghost.
+2. Entrar al módulo de tags.
+3. Crear nuevo tag.
+4. Ver el listado de los tags.
+5. Seleccionar el tag creado.
+6. Editar la descripción del tag creado.
+7. Cerrar sesión.|
+|Editar tag|Editar el color del tag creado:
+1. Autenticación en ghost.
+2. Entrar al módulo de tags.
+3. Crear nuevo tag.
+4. Ver el listado de los tags.
+5. Seleccionar el tag creado.
+6. Editar el color del tag creado.
+7. Cerrar sesión.|
+|Eliminar post|Eliminar un post que fue modificado|
+|Eliminar post|Eliminar un post que fue creado como draft:
+1.	Autenticación en ghost.
+2.	Entrar al módulo de post.
+3.	Crear un nuevo post como draft.
+4.	Verificar que el post fue creado como draft.
+5.	Ingresar al post.
+6.	Eliminar el post.
+7.	Cerrar sesión.|
+|Eliminar post|Eliminar el primer post de la lista de posts:
+1.	Autenticación en ghost.
+2.	Entrar al módulo de post.
+3.	Seleccionar el primer post de la lista.
+4.	Abrir las opciones del post.
+5.	Eliminar el post.
+6.	Cerrar sesión.|
