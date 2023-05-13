@@ -39,7 +39,7 @@ async function executeTest(){
                         'Editar post/Cancelar la edicion de un post', 'Editar post/Editar un post nuevo', 'Editar post/Editar un post ya existente',
                         'Editar pagina/Editar el url de una pagina creada', 'Editar pagina/Editar una pagina creada y hacerla featured']
 
-    for (escenario of escenarios) {
+    escenarios.map(async(escenario) => { 
         let resultInfo = {}
         let datetime = new Date().toISOString().replace(/:/g,".");
         
@@ -66,12 +66,12 @@ async function executeTest(){
                 analysisTime: data.analysisTime
             }
             fs.writeFileSync(`./results/${escenario}/compare-${files1[i]}`, data.getBuffer());
-            fs.writeFileSync(`./results/${escenario}/report.html`, createReport(datetime, resultInfo, `/Screenshots/Version1/Kraken/${escenario}/${files1[i]}`, `/Screenshots/Version2/Kraken/${escenario}/${files2[i]}`));
+            fs.writeFileSync(`./results/${escenario}/report-${files1[i]}.html`, createReport(datetime, resultInfo, `../../../Screenshots/Version1/Kraken/${escenario}/${files1[i]}`, `../../../Screenshots/Version2/Kraken/${escenario}/${files2[i]}`));
             fs.copyFileSync('./index.css', `./results/${escenario}/index.css`);           
         }
 
 
-    }
+    });
     console.log('------------------------------------------------------------------------------------')
     console.log("Execution finished. Check the report under the results folder")
 }
