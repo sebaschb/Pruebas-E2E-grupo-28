@@ -21,6 +21,8 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+  // add rute for screenshots
+  screenshotsFolder: "../Screenshots/Version1/Cypress",
   e2e: {
     setupNodeEvents,
     baseUrl: "http://localhost:3001/ghost",

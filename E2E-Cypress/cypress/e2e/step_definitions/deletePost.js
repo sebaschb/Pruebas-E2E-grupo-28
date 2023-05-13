@@ -16,6 +16,7 @@ When("The user deletes the post", () => {
   post.clickPostSettings();
   post.findDeletePostButton();
   post.clickDeletePostButton();
+  cy.screenshot("Delete post");
   post.clickConfirmDeletePostButton();
 });
 

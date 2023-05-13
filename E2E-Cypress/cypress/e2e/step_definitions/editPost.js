@@ -16,24 +16,30 @@ When(
   "A user enters the username, the password, and clicks on the login button",
   () => {
     cy.url().should("contain", authLoginRoute);
-    login.submitLogin(username, password);
+    login.enterUsername(username);
+    login.enterPassword(password);
+    cy.screenshot("Login");
+    login.clickLogin();
   }
 );
 
 When("The user navigates to the post section", () => {
   cy.url().should("contain", dashboardRoute);
   home.clickButtonPost();
+  cy.screenshot("Post seccion");
 });
 
 When("The user creates a new post", () => {
   cy.url().should("contain", postRoute);
   post.clickButtonNewPost();
   cy.url().should("contain", createPostRoute);
-  const postTitle = "Ttitulo nuevo"; // Genera un título aleatorio de 3 palabras
+  const postTitle = "Titulo nuevo";
   const postContent = "Lorem ipsum dolor sit amet, consectetur";
 
   createPost.enterPostTittle(postTitle);
   createPost.enterPostMessage(postContent);
+
+  cy.screenshot("New post");
 
   createPost.clickButtonReturnPost();
 });
@@ -46,8 +52,9 @@ When("The user modifies the newly created post", () => {
   cy.url().should("contain", createPostRoute);
   createPost.enterPostTittle(postTitle);
 
-  createPost.clickButtonReturnPost();
+  cy.screenshot("New post modified");
 
+  createPost.clickButtonReturnPost();
   cy.url().should("contain", postRoute);
 });
 
@@ -56,7 +63,6 @@ When("The user canceled modifies post", () => {
   post.selectFirstPost();
   cy.url().should("contain", createPostRoute);
   createPost.clickButtonReturnPost();
-
   cy.url().should("contain", postRoute);
 });
 

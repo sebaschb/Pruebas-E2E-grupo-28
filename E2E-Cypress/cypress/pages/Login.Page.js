@@ -22,6 +22,7 @@ class Login {
   submitLogin(username, password) {
     this.enterUsername(username);
     this.enterPassword(password);
+    cy.screenshot();
     this.get.submitButton().click();
   }
 }
