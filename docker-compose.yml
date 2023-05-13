@@ -1,12 +1,12 @@
 version: '3.9'
 services:
-  # ghost:
-  #   image: ghost:3.41.1
-  #   environment:
-  #     - url=http://localhost:3001
-  #   ports:
-  #     - 3001:2368
-  #   container_name: ghost_3.41.1
+  ghost_3.41.1:
+    image: ghost:3.41.1
+    environment:
+      - url=http://localhost:3001
+    ports:
+      - 3001:2368
+    container_name: ghost_3.41.1
 
   ghost_4.44.0:
     image: ghost:4.44.0

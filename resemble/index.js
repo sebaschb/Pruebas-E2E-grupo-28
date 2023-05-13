@@ -1,10 +1,10 @@
-const compareImages = require("resemblejs/compareImages")
-const fs = require("fs")
+const compareImages = require("resemblejs/compareImages");
+const fs = require("fs");
 const config = require("./config.json");
 const { options } = config;
 
-function createReport(datetime, resInfo, image1, image2){
-    return `
+function createReport(datetime, resInfo, image1, image2) {
+  return `
     <html>
         <head>
             <title> VRT Report </title>
@@ -16,7 +16,7 @@ function createReport(datetime, resInfo, image1, image2){
             </h1>
             <p>Executed: ${datetime}</p>
 
-            <div class=" btitle">
+            <div class="btitle">
                 <p>Data: ${JSON.stringify(resInfo)}</p>
             </div>
             <div class="imgline">
@@ -30,51 +30,89 @@ function createReport(datetime, resInfo, image1, image2){
             </div>
         </div>
         </body>
-    </html>`
+    </html>`;
 }
 
-async function executeTest(){
-    const escenarios = ['Editar pagina/Editar el titulo de una pagina creada', 'Editar pagina/Editar la descripcion de una pagina creada',
-                        'Eliminar post/Eliminar el primer post de la lista de posts', 'Eliminar post/Eliminar un post editado', 'Eliminar post/Eliminar un post guardado como draft',
-                        'Editar post/Cancelar la edicion de un post', 'Editar post/Editar un post nuevo', 'Editar post/Editar un post ya existente',
-                        'Editar pagina/Editar el url de una pagina creada', 'Editar pagina/Editar una pagina creada y hacerla featured']
+async function executeTest() {
+  try {
+    const escenarios = [
+      "Editar pagina/Editar el titulo de una pagina creada",
+      "Editar pagina/Editar la descripcion de una pagina creada",
+      "Eliminar post/Eliminar el primer post de la lista de posts",
+      "Eliminar post/Eliminar un post editado",
+      "Eliminar post/Eliminar un post guardado como draft",
+      "Editar post/Cancelar la edicion de un post",
+      "Editar post/Editar un post nuevo",
+      "Editar post/Editar un post ya existente",
+      "Editar pagina/Editar el url de una pagina creada",
+      "Editar pagina/Editar una pagina creada y hacerla featured",
+    ];
 
-    escenarios.map(async(escenario) => { 
-        let resultInfo = {}
-        let datetime = new Date().toISOString().replace(/:/g,".");
-        
-        if (!fs.existsSync(`./results/${escenario}`)){
-            fs.mkdirSync(`./results/${escenario}`, { recursive: true });
+    await Promise.all(
+      escenarios.map(async (escenario) => {
+        let resultInfo = {};
+        let datetime = new Date().toISOString().replace(/:/g, ".");
+
+        if (!fs.existsSync(`./results/${escenario}`)) {
+          fs.mkdirSync(`./results/${escenario}`, { recursive: true });
         }
+
         const folder1 = `../Screenshots/Version1/Kraken/${escenario}`;
         const folder2 = `../Screenshots/Version2/Kraken/${escenario}`;
         const files1 = fs.readdirSync(folder1);
         const files2 = fs.readdirSync(folder2);
 
         for (let i = 0; i < files1.length; i++) {
-            const data = await compareImages(
-                fs.readFileSync(`${folder1}/${files1[i]}`),
-                fs.readFileSync(`${folder2}/${files2[i]}`),
-                options
-            );
-            resultInfo = {
-                isSameDimensions: data.isSameDimensions,
-                dimensionDifference: data.dimensionDifference,
-                rawMisMatchPercentage: data.rawMisMatchPercentage,
-                misMatchPercentage: data.misMatchPercentage,
-                diffBounds: data.diffBounds,
-                analysisTime: data.analysisTime
-            }
-            fs.writeFileSync(`./results/${escenario}/compare-${files1[i]}`, data.getBuffer());
-            fs.writeFileSync(`./results/${escenario}/report-${files1[i]}.html`, createReport(datetime, resultInfo, `../../../Screenshots/Version1/Kraken/${escenario}/${files1[i]}`, `../../../Screenshots/Version2/Kraken/${escenario}/${files2[i]}`));
-            fs.copyFileSync('./index.css', `./results/${escenario}/index.css`);           
+          const data = await compareImages(
+            fs.readFileSync(`${folder1}/${files1[i]}`),
+            fs.readFileSync(`${folder2}/${files2[i]}`),
+            options
+          );
+
+          resultInfo = {
+            isSameDimensions: data.isSameDimensions,
+            dimensionDifference: data.dimensionDifference,
+            rawMisMatchPercentage: data.rawMisMatchPercentage,
+            misMatchPercentage: data.misMatchPercentage,
+            diffBounds: data.diffBounds,
+            analysisTime: data.analysisTime,
+          };
+
+          fs.writeFileSync(
+            `./results/${escenario}/compare-${files1[i]}`,
+            data.getBuffer()
+          );
+
+          fs.writeFileSync(
+            `./results/${escenario}/report-${files1[i]}.html`,
+            createReport(
+              datetime,
+              resultInfo,
+              `./../../../../Screenshots/Version1/Kraken/${escenario}/${files1[i]}`,
+              `./../../../../Screenshots/Version2/Kraken/${escenario}/${files2[i]}`
+            )
+          );
+
+          fs.copyFileSync("./index.css", `./results/${escenario}/index.css`);
         }
+      })
+    );
 
-
-    });
-    console.log('------------------------------------------------------------------------------------')
-    console.log("Execution finished. Check the report under the results folder")
+    console.log(
+      "------------------------------------------------------------------------------------"
+    );
+    console.log(
+      "Ejecución finalizada. Verifica el informe en la carpeta 'results'."
+    );
+  } catch (error) {
+    console.error("Se produjo un error:", error);
+  }
 }
 
-
-(async ()=>console.log(await executeTest()))();
+(async () => {
+  try {
+    await executeTest();
+  } catch (error) {
+    console.error("Se produjo un error en la ejecución:", error);
+  }
+})();

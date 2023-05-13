@@ -5,3 +5,4 @@ ghost/*
 kraken/reports
 E2E-Cypress/node_modules
 E2E-kraken/node_modules
+resemble/node_modules
