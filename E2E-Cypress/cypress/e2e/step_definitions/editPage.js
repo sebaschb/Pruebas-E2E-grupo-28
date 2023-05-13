@@ -64,8 +64,6 @@ When("The user creates a new page change feature", () => {
 
   createPage.clickButtonFeaturePage();
 
-  cy.screenshot("New page feature");
-
   createPage.clickButtonReturnPage();
 });
 
