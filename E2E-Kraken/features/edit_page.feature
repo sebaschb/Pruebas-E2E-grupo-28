@@ -17,7 +17,7 @@ Scenario: Editar el titulo de una página creada
   And I edit the page content "new page title"
   And I wait for 2 seconds
   And I publish the page
-  And I wait for 5 seconds
+  And I wait for 10 seconds
   And I navigate to page "http://localhost:3001/ghost/#/pages"
   And I wait for 2 seconds
   And I check the page with title "new page title"
@@ -29,10 +29,6 @@ Scenario: Editar el titulo de una página creada
   And I navigate to page "http://localhost:3001/ghost/#/pages"
   And I wait for 2 seconds
   Then I check the page with title "new page title v2"
-  And I wait for 2 seconds
-  And I open my user info
-  And I wait for 1 seconds
-  And I close my session
   And I wait for 2 seconds
 
 @user2 @web
@@ -69,6 +65,7 @@ Scenario: Editar la descripción de una página creada
   And I wait for 1 seconds
   And I close my session
   And I wait for 2 seconds
+
 
 @user3 @web
 Scenario: Editar el url de una pagina creada

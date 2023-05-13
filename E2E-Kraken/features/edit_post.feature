@@ -1,125 +1,122 @@
 Feature: edit post
 
 @user1 @web
-Scenario: Editar el titulo de una página creada
-  Given I navigate to page "http://localhost:3001/ghost/#/pages"
+Scenario: Editar un post nuevo
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
   And I enter password "<PASSWORD>"
   And I wait for 2 seconds
-  And I click next
+  And I sign in
   And I wait for 2 seconds
-  And I got to new page form
+  And I click on posts module
   And I wait for 2 seconds
-  And I edit the page content "new page title"
+  And I go to new post form
   And I wait for 2 seconds
-  And I publish the page
+  And I edit the post content "new post title"
+  And I wait for 2 seconds
+  And I publish the post
   And I wait for 5 seconds
-  And I navigate to page "http://localhost:3001/ghost/#/pages"
+  And I navigate to page "http://localhost:3001/ghost/#/posts"
   And I wait for 2 seconds
-  And I check the page with title "new page title"
+  And I check the post with title "new post title"
   And I wait for 2 seconds
-  When I go to page "new page title"
+  When I go to post "new post title"
   And I wait for 2 seconds
-  And I edit the title
-  And I publish the page
-  And I navigate to page "http://localhost:3001/ghost/#/pages"
+  And I edit the post title "new post title v2"
+  And I publish the post
+  And I navigate to page "http://localhost:3001/ghost/#/posts"
   And I wait for 2 seconds
-  Then I check the page with title "new page title v2"
+  Then I check the post with title "new post title v2"
+  And I wait for 2 seconds
 
 @user2 @web
-Scenario: Editar la descripción de una página creada
-  Given I navigate to page "http://localhost:3001/ghost/#/pages"
+Scenario: Editar un post ya existente
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
   And I enter password "<PASSWORD>"
   And I wait for 2 seconds
-  And I click next
+  And I sign in
   And I wait for 2 seconds
-  And I got to new page form
+  And I click on posts module
   And I wait for 2 seconds
-  And I edit the page content "new page description"
+  And I click the first post on the list
   And I wait for 2 seconds
-  And I publish the page
+  And I edit the post title "new first post title"
+  And I wait for 2 seconds
+  And I publish the post
   And I wait for 5 seconds
-  And I navigate to page "http://localhost:3001/ghost/#/pages"
+  And I navigate to page "http://localhost:3001/ghost/#/posts"
   And I wait for 2 seconds
-  And I check the page with title "new page description"
+  Then I check the post with title "new first post title"
   And I wait for 2 seconds
-  When I go to page "new page description"
-  And I wait for 2 seconds
-  And I edit the description
-  And I publish the page
-  And I navigate to page "http://localhost:3001/ghost/#/pages"
-  And I wait for 2 seconds
-  Then I check the page with title "new page description"
+
 
 @user3 @web
-Scenario: Editar el url de una pagina creada
-  Given I navigate to page "http://localhost:3001/ghost/#/pages"
+Scenario: Cancelar la edición de un post
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
   And I enter password "<PASSWORD>"
   And I wait for 2 seconds
-  And I click next
+  And I sign in
   And I wait for 2 seconds
-  And I got to new page form
+  And I click on posts module
   And I wait for 2 seconds
-  And I edit the page content "new page url"
+  And I click the first post on the list
   And I wait for 2 seconds
-  And I publish the page
+  And I edit the post title "new canceled post title"
+  And I wait for 2 seconds
+  And I click on posts module
   And I wait for 5 seconds
-  And I navigate to page "http://localhost:3001/ghost/#/pages"
+  And I navigate to page "http://localhost:3001/ghost/#/posts"
   And I wait for 2 seconds
-  And I check the page with title "new page url"
+  Then I check the post title existance "new canceled post title"
   And I wait for 2 seconds
-  When I go to page "new page url"
-  And I wait for 2 seconds
-  And I click the settings page
-  And I wait for 2 seconds
-  And I edit the page url
-  And I wait for 5 seconds
-  And I click the settings page
-  And I wait for 5 seconds
-  And I publish the page
-  And I wait for 2 seconds
-  And I navigate to page "http://localhost:3001/ghost/#/pages"
-  And I wait for 2 seconds
-  Then I check the page with title "new page url"
 
 @user4 @web
-Scenario: Editar el url de una pagina creada
-  Given I navigate to page "http://localhost:3001/ghost/#/pages"
+Scenario: Editar un post múltiples veces
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
   And I enter password "<PASSWORD>"
   And I wait for 2 seconds
-  And I click next
+  And I sign in
   And I wait for 2 seconds
-  And I got to new page form
+  And I click on posts module
   And I wait for 2 seconds
-  And I edit the page content "new page featured"
+  And I go to new post form
   And I wait for 2 seconds
-  And I publish the page
+  And I edit the post content "new post multiedit"
+  And I wait for 2 seconds
+  And I publish the post
   And I wait for 5 seconds
-  And I navigate to page "http://localhost:3001/ghost/#/pages"
+  And I navigate to page "http://localhost:3001/ghost/#/posts"
   And I wait for 2 seconds
-  And I check the page with title "new page featured"
+  And I check the post with title "new post multiedit"
   And I wait for 2 seconds
-  When I go to page "new page featured"
+  And I go to post "new post multiedit"
   And I wait for 2 seconds
-  And I click the settings page
-  And I wait for 2 seconds
-  And I make the page featured
+  And I edit the post title "new post multiedit 2"
+  And I publish the post
+  
   And I wait for 5 seconds
-  And I click the settings page
+  And I navigate to page "http://localhost:3001/ghost/#/posts"
+  And I wait for 2 seconds
+  And I check the post with title "new post multiedit 2"
+  And I wait for 2 seconds
+  And I go to post "new post multiedit 2"
+  And I wait for 2 seconds
+  And I edit the post title "new post multiedit 3"
+  And I publish the post
+
   And I wait for 5 seconds
-  And I publish the page
+  And I navigate to page "http://localhost:3001/ghost/#/posts"
   And I wait for 2 seconds
-  And I navigate to page "http://localhost:3001/ghost/#/pages"
+  Then I check the post with title "new post multiedit 3"
   And I wait for 2 seconds
-  Then I check the page with title "new page featured"

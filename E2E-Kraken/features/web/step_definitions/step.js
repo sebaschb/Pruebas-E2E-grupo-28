@@ -17,7 +17,7 @@ When('I sign in', async function() {
 })
 
 When('I got to new page form', async function() {
-    let element = await this.driver.$('.gh-btn-green');
+    let element = await this.driver.$('a[href = "#/editor/page/"]');
     return await element.click();
 })
 
@@ -142,7 +142,7 @@ When("I close my session", async function() {
 // Eliminar Post
 
 When("I click on posts module", async function() {
-  let element = await this.driver.$("#ember28");
+  let element = await this.driver.$('a[href="#/posts/"]');
   return await element.click();
 });
 
@@ -166,3 +166,46 @@ Then("I confirm the delete", async function() {
   let element = await this.driver.$(".gh-btn-red");
   return await element.click();
 });
+
+// Crear post
+
+When('I go to new post form', async function() {
+  let element = await this.driver.$('a[href = "#/editor/post/"]');
+  return await element.click();
+})
+
+When('I edit the post content {kraken-string}', async function(title) {
+  let elementTitle = await this.driver.$('.gh-editor-title');
+  await elementTitle.setValue(title);
+  let content = "new page description"
+  let elementContent = await this.driver.$(".koenig-editor__editor");
+  return await elementContent.setValue(content);
+})
+
+When('I publish the post', async function () {
+  let publishDropdown = await this.driver.$(".ember-basic-dropdown-trigger");
+  await publishDropdown.click();
+  let publishButton = await this.driver.$('.gh-publishmenu-button');
+  await publishButton.click();
+})
+
+When('I check the post with title {kraken-string}', async function (title) {
+  let pageItem = await this.driver.$(".//*//h3[text() = '" + title + "']");
+  return await pageItem.isExisting();
+})
+
+When('I go to post {kraken-string}', async function (title) {
+  let pageElement = await this.driver.$(".//*//h3[text() = '" + title + "']");
+  return await pageElement.click();
+})
+
+When('I edit the post title {kraken-string}', async function(title) {
+  let elementTitle = await this.driver.$('textarea[class="gh-editor-title ember-text-area gh-input ember-view"]');
+  await elementTitle.setValue(title);
+  return await elementTitle.setValue(title);
+})
+
+When('I check the post title existance {kraken-string}', async function(title) {
+  let pageItem = await this.driver.$(".//*//h3[text() = '" + title + "']");
+  return await !pageItem.isExisting();
+})
