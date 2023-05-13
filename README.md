@@ -88,13 +88,7 @@ Todos los miembros del equipo contribuyeron al código, excepto Andrés Silva.
 |Editar post|E2|
 |Editar post|E3|
 |Editar post|E4|
-|Editar página|Editar el título de una página creada:<br>
-1. Autenticación en ghost como administrador.<br>
-2. Listar las páginas creadas.<br>
-3. Crear una nueva página.<br>
-4. Verificar la correcta creación de la página.<br>
-5. Editar el título de la página creada.<br>
-6. Verificar que se hayan guardado los cambios correctamente.|
+|Editar página|Editar el título de una página creada:<br>1. Autenticación en ghost como administrador.<br>2. Listar las páginas creadas.<br>3. Crear una nueva página.<br>4. Verificar la correcta creación de la página.<br>5. Editar el título de la página creada.<br>6. Verificar que se hayan guardado los cambios correctamente.|
 |Editar página|Editar la descripción de una página creada:<br>
 1. Autenticación en ghost como administrador.<br>
 2. Listar las páginas creadas.<br>
