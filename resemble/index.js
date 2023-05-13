@@ -3,7 +3,7 @@ const fs = require("fs")
 const config = require("./config.json");
 const { options } = config;
 
-function createReport(datetime, resInfo, image1, image2, image3){
+function createReport(datetime, resInfo, image1, image2){
     return `
     <html>
         <head>
@@ -34,41 +34,47 @@ function createReport(datetime, resInfo, image1, image2, image3){
 }
 
 async function executeTest(){
-    let resultInfo = {}
-    let datetime = new Date().toISOString().replace(/:/g,".");
-    
-    if (!fs.existsSync(`./results/${datetime}`)){
-        fs.mkdirSync(`./results/${datetime}`, { recursive: true });
-    }
+    const escenarios = ['Editar pagina/Editar el titulo de una pagina creada', 'Editar pagina/Editar la descripcion de una pagina creada',
+                        'Eliminar post/Eliminar el primer post de la lista de posts', 'Eliminar post/Eliminar un post editado', 'Eliminar post/Eliminar un post guardado como draft',
+                        'Editar post/Cancelar la edicion de un post', 'Editar post/Editar un post nuevo', 'Editar post/Editar un post ya existente',
+                        'Editar pagina/Editar el url de una pagina creada', 'Editar pagina/Editar una pagina creada y hacerla featured']
 
-    const folder1 = 'C:/Users/santi/OneDrive/Escritorio/Imgaes/Test 1';
-    const folder2 = 'C:/Users/santi/OneDrive/Escritorio/Imgaes/Test 2';
-    
-    const files1 = fs.readdirSync(folder1);
-    const files2 = fs.readdirSync(folder1);
-
-    for (let i = 0; i < files1.length; i++) {
-        const data = await compareImages(
-            fs.readFileSync(`${folder1}/${files1[i]}`),
-            fs.readFileSync(`${folder2}/${files2[i]}`)
-        );
-        resultInfo = {
-            isSameDimensions: data.isSameDimensions,
-            dimensionDifference: data.dimensionDifference,
-            rawMisMatchPercentage: data.rawMisMatchPercentage,
-            misMatchPercentage: data.misMatchPercentage,
-            diffBounds: data.diffBounds,
-            analysisTime: data.analysisTime
+    for (escenario of escenarios) {
+        let resultInfo = {}
+        let datetime = new Date().toISOString().replace(/:/g,".");
+        
+        if (!fs.existsSync(`./results/${escenario}`)){
+            fs.mkdirSync(`./results/${escenario}`, { recursive: true });
         }
-        fs.writeFileSync(`./results/${datetime}/compare-${files1[i]}`, data.getBuffer());
-        fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime, resultInfo, `${folder1}/${files1[i]}`, `${folder2}/${files2[i]}`, `./results/${datetime}/compare-${files1[i]}`));
-        fs.copyFileSync('./index.css', `./results/${datetime}/index.css`);           
+        const folder1 = `../Screenshots/Version1/Kraken/${escenario}`;
+        const folder2 = `../Screenshots/Version2/Kraken/${escenario}`;
+        const files1 = fs.readdirSync(folder1);
+        const files2 = fs.readdirSync(folder2);
+
+        for (let i = 0; i < files1.length; i++) {
+            const data = await compareImages(
+                fs.readFileSync(`${folder1}/${files1[i]}`),
+                fs.readFileSync(`${folder2}/${files2[i]}`),
+                options
+            );
+            resultInfo = {
+                isSameDimensions: data.isSameDimensions,
+                dimensionDifference: data.dimensionDifference,
+                rawMisMatchPercentage: data.rawMisMatchPercentage,
+                misMatchPercentage: data.misMatchPercentage,
+                diffBounds: data.diffBounds,
+                analysisTime: data.analysisTime
+            }
+            fs.writeFileSync(`./results/${escenario}/compare-${files1[i]}`, data.getBuffer());
+            fs.writeFileSync(`./results/${escenario}/report.html`, createReport(datetime, resultInfo, `/Screenshots/Version1/Kraken/${escenario}/${files1[i]}`, `/Screenshots/Version2/Kraken/${escenario}/${files2[i]}`));
+            fs.copyFileSync('./index.css', `./results/${escenario}/index.css`);           
+        }
+
+
     }
     console.log('------------------------------------------------------------------------------------')
     console.log("Execution finished. Check the report under the results folder")
-    return resultInfo;  
 }
-
 
 
 (async ()=>console.log(await executeTest()))();
