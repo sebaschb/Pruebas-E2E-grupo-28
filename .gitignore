@@ -1,10 +1,7 @@
-node_modules
-cypress/videos
-cypress/screenshots
-pnpm-lock.yaml
-reports
+E2E-Cypress/cypress/videos
+E2E-Cypress/cypress/screenshots
+E2E-kraken/reports
 ghost/*
 kraken/reports
-cypress/videos
-cypress/screenshots
-.vscode
+E2E-Cypress/node_modules
+E2E-kraken/node_modules
