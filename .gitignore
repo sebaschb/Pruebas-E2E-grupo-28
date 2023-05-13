@@ -5,7 +5,3 @@ ghost/*
 kraken/reports
 E2E-Cypress/node_modules
 E2E-kraken/node_modules
-Screenshots/Version1/Cypress
-Screenshots/Version1/kraken
-Screenshots/Version2/Cypress
-Screenshots/Version2/kraken
