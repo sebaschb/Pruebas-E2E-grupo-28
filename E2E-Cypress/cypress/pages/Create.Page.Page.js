@@ -25,8 +25,8 @@ class CreatePage {
   }
 
   clickButtonReturnPage() {
-    cy.wait(2000);
-    this.get.buttonReturnPage().click();
+    cy.visit("/#/pages");
+    // this.get.buttonReturnPage().click();
   }
 
   clickButtonSettings() {
@@ -37,6 +37,7 @@ class CreatePage {
     this.get.buttonSettings().click();
     this.get.inputUrlPage().clear();
     this.get.inputUrlPage().type("https://example.com");
+    cy.screenshot("New page url");
     this.get.menuSettings().scrollTo("bottom");
     this.get.menuCloseSetting().click();
   }
@@ -45,6 +46,7 @@ class CreatePage {
     this.get.buttonSettings().click();
     this.get.menuSettings().scrollTo("top");
     this.get.buttonFeaturePage().click();
+    cy.screenshot("New page feature");
     this.get.menuSettings().scrollTo("bottom");
     this.get.menuCloseSetting().click();
   }

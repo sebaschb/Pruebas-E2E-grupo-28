@@ -49,8 +49,6 @@ When("The user creates a new page whit url", () => {
 
   createPage.enterPageUrl();
 
-  cy.screenshot("New page url");
-
   createPage.clickButtonReturnPage();
 });
 
@@ -66,7 +64,7 @@ When("The user creates a new page change feature", () => {
 
   createPage.clickButtonFeaturePage();
 
-  cy.screenshot("New page url");
+  cy.screenshot("New page feature");
 
   createPage.clickButtonReturnPage();
 });

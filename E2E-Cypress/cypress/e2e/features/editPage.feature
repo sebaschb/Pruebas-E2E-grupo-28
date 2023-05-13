@@ -1,4 +1,4 @@
-Feature: edit page
+Feature: Edit page
 
     Background:
         Given A web browser is at the ghost login page
