@@ -7,3 +7,11 @@ services:
     ports:
       - 3001:2368
     container_name: ghost_3.41.1
+
+  # ghost_4.44.0:
+  #   image: ghost:4.44.0
+  #   environment:
+  #     - url=http://localhost:3002
+  #   ports:
+  #     - 3002:2368
+  #   container_name: ghost_4.44.0

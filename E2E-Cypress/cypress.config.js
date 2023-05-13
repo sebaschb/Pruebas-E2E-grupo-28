@@ -42,6 +42,8 @@ module.exports = defineConfig({
       createPostRoute: "/#/editor/post",
       tagRoute: "/#/tags/",
       createTagRoute: "/#/tags/new",
+      pageRoute: "/#/page",
+      createPageRoute: "/#/editor/page",
     },
   },
 });

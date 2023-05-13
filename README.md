@@ -13,31 +13,30 @@ Los requsitos principales del proyecto son los siguientes
 
 1. Contar con node (v14.18.0) y npm (6.14.15) en el dispositivo
 2. Descargar ghost-cli en el dispositivo de manera global
-
-```bash
-npm install ghost-cli@latest -g
-```
-
 3. Tener un explorador en nuestro caso usamos chrome
 4. Contar con un IDE, en nuestro caso recomendamos visual estudio
+5. Contar con docker
 
 ## Instalación
 
-Despues de la clonacion del repositorio se procede a hacer la configuracion inicial
+Despues de la clonacion del repositorio se procede a hacer la configuracion inicial de cada herramienta
+
+### Ghost
+
+En la terminal utilizar esto:
 
 ```bash
-npm install
+docker-compose up
 ```
 
-Teniendo las dependencias procedemos a hacer la instalacion de ghost en nuestro dispositivo
+Este comando incia las 2 versiones del ghost
 
-1. Descargar y instalar ghost en la carpeta /ghost:
+1. ghost_3.41.1 -> Version 1
+2. ghost_4.44.0 -> Version 2
 
-```bash
-npm run ghost:prepare //este comando inicia la configuracion del ghost con la version en la carpeta
-```
+Las versiones hacen referencia al manejo de las carpetas de los screenshots (Version 1 y 2)
 
-2. Configuracion inicial de ghost: Para este paso es necesario ir a la pagina de administrador de ghost: http://localhost:3001/ghost (Es importante el puerto para su correcto funcionamiento)
+#### Ghost 3.41.1
 
 Ingrese al link http://localhost:3001/ghost y configure la pagina con los siguientes datos:
 
@@ -48,6 +47,14 @@ Ingrese al link http://localhost:3001/ghost y configure la pagina con los siguie
 En el apartado de "Invite staff users"
 Ponga una direccion de correo con formato valido (example@correo.prueba)
 
+#### Ghost 4.44.0
+
+Ingrese al link http://localhost:3002/ghost y configure la pagina con los siguientes datos:
+
+- Correo: c.wilchesv@uniandes.edu.co
+- Pasword: 2TiSXG9VVvECnp
+  (Las demas configuraciones no son de mucha importancia)
+
 ## Uso
 
 Con la aplicacion de ghost funcionando y corriendo. Ahora se pueden ejecutar las pruebas E2E
@@ -55,12 +62,16 @@ Con la aplicacion de ghost funcionando y corriendo. Ahora se pueden ejecutar las
 1. las pruebas que usan kraken se utilizan de la siguiente forma:
 
 ```bash
+cd E2E-Kraken
+npm install
 npm run kraken:execution
 ```
 
 2. Las pruebas que usan cypress se usan de la siguiente forma:
 
 ```bash
+cd E2E-Cypress
+npm install
 npm run cypress:execution
 npm run cypress:runner //Esta opcion es para abrir la interfaz de cypress
 ```
