@@ -75,7 +75,7 @@ When('I make the page featured', async function() {
 })
 
 When('I click the settings page', async function() {
-    let element = await this.driver.$(".post-settings");
+    let element = await this.driver.$(".settings-menu-toggle");
     await element.click();
 })
 
@@ -152,7 +152,7 @@ When("I click the first post on the list", async function() {
 });
 
 When("I click the post settings", async function() {
-  let element = await this.driver.$(".post-settings");
+  let element = await this.driver.$(".settings-menu-toggle");
   return await element.click();
 });
 
@@ -183,10 +183,12 @@ When('I edit the post content {kraken-string}', async function(title) {
 })
 
 When('I publish the post', async function () {
-  let publishDropdown = await this.driver.$(".ember-basic-dropdown-trigger");
-  await publishDropdown.click();
-  let publishButton = await this.driver.$('.gh-publishmenu-button');
+  let publishMenu = await this.driver.$('.gh-publishmenu-trigger');
+  await publishMenu.click();
+  let publishButton = await this.driver.$('.gh-btn-icon')
   await publishButton.click();
+  let confirmButton = await this.driver.$('.gh-btn-black')
+  await confirmButton.click();
 })
 
 When('I check the post with title {kraken-string}', async function (title) {
