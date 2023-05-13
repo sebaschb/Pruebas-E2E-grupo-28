@@ -102,6 +102,7 @@ Scenario: Editar el url de una pagina creada
   And I wait for 1 seconds
   And I close my session
   And I wait for 2 seconds
+
 @user4 @web
 Scenario: Editar una pagina creada y hacerla featured
   Given I navigate to page "http://localhost:3002/ghost/#/signin"
