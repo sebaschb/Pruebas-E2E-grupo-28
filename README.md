@@ -89,72 +89,13 @@ Todos los miembros del equipo contribuyeron al código, excepto Andrés Silva.
 |Editar post|E3|
 |Editar post|E4|
 |Editar página|Editar el título de una página creada:<br>1. Autenticación en ghost como administrador.<br>2. Listar las páginas creadas.<br>3. Crear una nueva página.<br>4. Verificar la correcta creación de la página.<br>5. Editar el título de la página creada.<br>6. Verificar que se hayan guardado los cambios correctamente.|
-|Editar página|Editar la descripción de una página creada:<br>
-1. Autenticación en ghost como administrador.<br>
-2. Listar las páginas creadas.<br>
-3. Crear una nueva página.<br>
-4. Verificar la correcta creación de la página.<br>
-5. Editar la descripción de la página creada.<br>
-6. Verificar que se hayan guardado los cambios correctamente.|
-|Editar página|Editar la url de una página creada:<br>
-1. Autenticación en ghost como administrador.<br>
-2. Listar las páginas creadas.<br>
-3. Crear una nueva página.<br>
-4. Verificar la correcta creación de la página.<br>
-5. Editar la url de la página creada.<br>
-6. Verificar que se hayan guardado los cambios correctamente.|
-|Editar página|Editar una página creada y configurarla como featured page:<br>
-1. Autenticación en ghost como administrador.<br>
-2. Listar las páginas creadas.<br>
-3. Crear una nueva página.<br>
-4. Verificar la correcta creación de la página.<br>
-5. Editar la página y hacerla featured.<br>
-6. Verificar que se hayan guardado los cambios correctamente.|
-|Editar tag|Editar el nombre del tag creado:<br>
-1. Autenticación en ghost.<br>
-2. Entrar al módulo de tags.<br>
-3. Crear nuevo tag.<br>
-4. Ver el listado de los tags.<br>
-5. Seleccionar el tag creado.<br>
-6. Editar el nombre del tag creado.<br>
-7. Cerrar sesión.|
-|Editar tag|Editar el slug del tag creado:<br>
-1. Autenticación en ghost.<br>
-2. Entrar al módulo de tags.<br>
-3. Crear nuevo tag.<br>
-4. Ver el listado de los tags.<br>
-5. Seleccionar el tag creado.<br>
-6. Editar el slug del tag creado.<br>
-7. Cerrar sesión.|
-|Editar tag|Editar la descripción del tag creado:<br>
-1. Autenticación en ghost.<br>
-2. Entrar al módulo de tags.<br>
-3. Crear nuevo tag.<br>
-4. Ver el listado de los tags.<br>
-5. Seleccionar el tag creado.<br>
-6. Editar la descripción del tag creado.<br>
-7. Cerrar sesión.|
-|Editar tag|Editar el color del tag creado:<br>
-1. Autenticación en ghost.<br>
-2. Entrar al módulo de tags.<br>
-3. Crear nuevo tag.<br>
-4. Ver el listado de los tags.<br>
-5. Seleccionar el tag creado.<br>
-6. Editar el color del tag creado.<br>
-7. Cerrar sesión.|
+|Editar página|Editar la descripción de una página creada:<br>1. Autenticación en ghost como administrador.<br>2. Listar las páginas creadas.<br>3. Crear una nueva página.<br>4. Verificar la correcta creación de la página.<br>5. Editar la descripción de la página creada.<br>6. Verificar que se hayan guardado los cambios correctamente.|
+|Editar página|Editar la url de una página creada:<br>1. Autenticación en ghost como administrador.<br>2. Listar las páginas creadas.<br>3. Crear una nueva página.<br>4. Verificar la correcta creación de la página.<br>5. Editar la url de la página creada.<br>6. Verificar que se hayan guardado los cambios correctamente.|
+|Editar página|Editar una página creada y configurarla como featured page:<br>1. Autenticación en ghost como administrador.<br>2. Listar las páginas creadas.<br>3. Crear una nueva página.<br>4. Verificar la correcta creación de la página.<br>5. Editar la página y hacerla featured.<br>6. Verificar que se hayan guardado los cambios correctamente.|
+|Editar tag|Editar el nombre del tag creado:<br>1. Autenticación en ghost.<br>2. Entrar al módulo de tags.<br>3. Crear nuevo tag.<br>4. Ver el listado de los tags.<br>5. Seleccionar el tag creado.<br>6. Editar el nombre del tag creado.<br>7. Cerrar sesión.|
+|Editar tag|Editar el slug del tag creado:<br>1. Autenticación en ghost.<br>2. Entrar al módulo de tags.<br>3. Crear nuevo tag.<br>4. Ver el listado de los tags.<br>5. Seleccionar el tag creado.<br>6. Editar el slug del tag creado.<br>7. Cerrar sesión.|
+|Editar tag|Editar la descripción del tag creado:<br>1. Autenticación en ghost.<br>2. Entrar al módulo de tags.<br>3. Crear nuevo tag.<br>4. Ver el listado de los tags.<br>5. Seleccionar el tag creado.<br>6. Editar la descripción del tag creado.<br>7. Cerrar sesión.|
+|Editar tag|Editar el color del tag creado:<br>1. Autenticación en ghost.<br>2. Entrar al módulo de tags.<br>3. Crear nuevo tag.<br>4. Ver el listado de los tags.<br>5. Seleccionar el tag creado.<br>6. Editar el color del tag creado.<br>7. Cerrar sesión.|
 |Eliminar post|Eliminar un post que fue modificado|
-|Eliminar post|Eliminar un post que fue creado como draft:<br>
-1.	Autenticación en ghost.<br>
-2.	Entrar al módulo de post.<br>
-3.	Crear un nuevo post como draft.<br>
-4.	Verificar que el post fue creado como draft.<br>
-5.	Ingresar al post.<br>
-6.	Eliminar el post.<br>
-7.	Cerrar sesión.|
-|Eliminar post|Eliminar el primer post de la lista de posts:<br>
-1.	Autenticación en ghost.<br>
-2.	Entrar al módulo de post.<br>
-3.	Seleccionar el primer post de la lista.<br>
-4.	Abrir las opciones del post.<br>
-5.	Eliminar el post.<br>
-6.	Cerrar sesión.|
+|Eliminar post|Eliminar un post que fue creado como draft:<br>1. Autenticación en ghost.<br>2. Entrar al módulo de post.<br>3. Crear un nuevo post como draft.<br>4. Verificar que el post fue creado como draft.<br>5. Ingresar al post.<br>6. Eliminar el post.<br>7. Cerrar sesión.|
+|Eliminar post|Eliminar el primer post de la lista de posts:<br>1. Autenticación en ghost.<br>2. Entrar al módulo de post.<br>3. Seleccionar el primer post de la lista.<br>4. Abrir las opciones del post.<br>5. Eliminar el post.<br>6. Cerrar sesión.|
