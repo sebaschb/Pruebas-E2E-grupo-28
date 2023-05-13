@@ -1,7 +1,7 @@
 class CreatePost {
   //Elements
   get = {
-    postTittleInput: () => cy.get('[placeholder="Post Title"]'),
+    postTittleInput: () => cy.get('[placeholder="Post title"]'),
     postMessageInput: () =>
       cy.get('[data-placeholder="Begin writing your post..."]'),
 

@@ -1,13 +1,13 @@
 class CreatePage {
   //Elements
   get = {
-    pageTittleInput: () => cy.get('[placeholder="Page Title"]'),
+    pageTittleInput: () => cy.get('[placeholder="Page title"]'),
     pageMessageInput: () =>
       cy.get('[data-placeholder="Begin writing your page..."]'),
 
     buttonSettings: () => cy.get('[title="Settings"]'),
     menuSettings: () => cy.get('[class*="settings-menu-pane"]').first(),
-    menuCloseSetting: () => cy.get('button[aria-label="Close"]'),
+    menuCloseSetting: () => cy.get('[class*="settings-menu-pane"]').first(),
     buttonReturnPage: () => cy.get('a[href="#/pages/"]'),
     inputUrlPage: () => cy.get('input[id="url"]'),
     buttonFeaturePage: () => cy.get('span[class="input-toggle-component"]'),
@@ -35,8 +35,7 @@ class CreatePage {
 
   enterPageUrl() {
     this.get.buttonSettings().click();
-    this.get.inputUrlPage().clear();
-    this.get.inputUrlPage().type("https://example.com");
+    this.get.inputUrlPage().type("localhost:3002/2");
     cy.screenshot("New page url");
     this.get.menuSettings().scrollTo("bottom");
     this.get.menuCloseSetting().click();

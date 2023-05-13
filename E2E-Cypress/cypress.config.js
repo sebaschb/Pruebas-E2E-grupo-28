@@ -22,10 +22,10 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   // add rute for screenshots
-  screenshotsFolder: "../Screenshots/Version1/Cypress",
+  screenshotsFolder: "../Screenshots/Version2/Cypress",
   e2e: {
     setupNodeEvents,
-    baseUrl: "http://localhost:3001/ghost",
+    baseUrl: "http://localhost:3002/ghost",
     chromeWebSecurity: false,
     specPattern: "cypress/e2e/features/*.feature",
   },
@@ -37,7 +37,7 @@ module.exports = defineConfig({
     },
     endpoint: {
       authLoginRoute: "/#/signin",
-      dashboardRoute: "/#/site",
+      dashboardRoute: "/#/dashboard",
       postRoute: "/#/post",
       createPostRoute: "/#/editor/post",
       tagRoute: "/#/tags/",

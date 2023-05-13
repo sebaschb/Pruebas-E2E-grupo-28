@@ -7,11 +7,14 @@ class Tag {
     rowCreatedTag: (value) => cy.contains(value).first(),
     slugNameInput: () => cy.get("#tag-slug"),
     descriptionNameInput: () => cy.get("#tag-description"),
-    colorNameInput: () => cy.get('input[name="accent-color"]'),
-    buttonSaveTag: () => cy.get('button[class="gh-btn gh-btn-blue gh-btn-icon ember-view"]'),
-    buttonEditTag: () => cy.get('button[class="gh-btn gh-btn-blue gh-btn-icon ember-view"]'),
+    colorNameInput: () => cy.get('input[name="accent-color"]').first(),
+    buttonSaveTag: () => cy.get('[class="view-actions"]'),
+    buttonEditTag: () => cy.get('[class="view-actions"]'),
     buttonDeleteTag: () => cy.contains("Delete tag"),
-    confirmDeleteTag: () => cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]').first(),
+    confirmDeleteTag: () =>
+      cy
+        .get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]')
+        .first(),
   };
 
   // Functions

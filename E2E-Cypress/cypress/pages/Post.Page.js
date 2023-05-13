@@ -4,7 +4,7 @@ class Post {
     buttonNewPost: () => cy.get('a[href="#/editor/post/"]').first(),
     listPost: () => cy.get('li[class*="list-item"]'),
     firstPostRow: () => cy.contains("By Ghost in Getting Started"),
-    postSettings: () => cy.get(".post-settings"),
+    postSettings: () => cy.get('[title="Settings"]'),
     deletePostButton: () => cy.get(".settings-menu-delete-button"),
     confirmDeletePostButton: () => cy.get(".gh-btn-red"),
   };
