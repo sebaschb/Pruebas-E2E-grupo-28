@@ -81,4 +81,4 @@ npm run cypress:runner //Esta opcion es para abrir la interfaz de cypress
 
 Todos los miembros del equipo contribuyeron al código, excepto Andrés Silva.
 
-## [Escenarios de pruebas](Escenarios-de-pruebas)
+## [Escenarios de pruebas](https://github.com/sebaschb/Pruebas-E2E-grupo-28/wiki/Escenarios-de-pruebas)
