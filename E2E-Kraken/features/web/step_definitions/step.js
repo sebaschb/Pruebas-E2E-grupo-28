@@ -83,12 +83,12 @@ When('I click the settings page', async function() {
 // Editar Tag
 
 When("I click on tags module", async function() {
-  let element = await this.driver.$("#ember38");
+  let element = await this.driver.$('a[href="#/tags/"]');
   return await element.click();
 });
 
 When("I click on new tag", async function() {
-  let element = await this.driver.$(".gh-btn-green");
+  let element = await this.driver.$('a[href="#/tags/new/"]');
   return await element.click();
 });
 
@@ -98,12 +98,12 @@ When("I enter the tag name", async function () {
 });
 
 Then("I save the tag", async function () {
-  let element = await this.driver.$(".gh-btn-icon");
+  let element = await this.driver.$(".gh-btn-primary");
   return await element.click();
 });
 
 When("I click on the created tag", async function() {
-  let element = await this.driver.$(".gh-tags-list-item");
+  let element = await this.driver.$('.//*//h3[text()="1 tag"]');
   return await element.click();
 });
 
@@ -135,7 +135,7 @@ When("I open my user info", async function() {
 });
 
 When("I close my session", async function() {
-  let element = await this.driver.$(".user-menu-signout");
+  let element = await this.driver.$('a[href="#/signout/"]');
   return await element.click();
 });
 

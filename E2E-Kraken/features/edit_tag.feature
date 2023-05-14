@@ -1,10 +1,8 @@
 Feature: Editar tag
 
-Feature: Editar tag
-
 @user1 @web
 Scenario: Editar el nombre del tag creado
-  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  Given I navigate to page "http://localhost:3002/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -28,16 +26,16 @@ Scenario: Editar el nombre del tag creado
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
-  And I click on new tag
+  And I click on tags module
   And I wait for 2 seconds
   And I open my user info
   And I wait for 1 seconds
-  And I close my session
+  Then I close my session
   And I wait for 2 seconds
 
 @user2 @web
 Scenario: Editar el slug del tag creado
-  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  Given I navigate to page "http://localhost:3002/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -61,14 +59,16 @@ Scenario: Editar el slug del tag creado
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
+  And I click on tags module
+  And I wait for 2 seconds
   And I open my user info
   And I wait for 1 seconds
-  And I close my session
+  Then I close my session
   And I wait for 2 seconds
 
 @user3 @web
 Scenario: Editar la descripcion del tag creado
-  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  Given I navigate to page "http://localhost:3002/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -92,14 +92,16 @@ Scenario: Editar la descripcion del tag creado
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
+  And I click on tags module
+  And I wait for 2 seconds
   And I open my user info
   And I wait for 1 seconds
-  And I close my session
+  Then I close my session
   And I wait for 2 seconds
 
 @user4 @web
 Scenario: Editar color del tag creado
-  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  Given I navigate to page "http://localhost:3002/ghost/#/signin"
   And I wait for 5 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -123,7 +125,9 @@ Scenario: Editar color del tag creado
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
+  And I click on tags module
+  And I wait for 2 seconds
   And I open my user info
   And I wait for 1 seconds
-  And I close my session
+  Then I close my session
   And I wait for 2 seconds
