@@ -3,6 +3,8 @@ import { home } from "../../pages/Home.Page";
 import { page } from "../../pages/Page.Page";
 import { createPage } from "../../pages/Create.Page.Page";
 
+const { newPage } = Cypress.env("dataPage");
+
 const { dashboardRoute, pageRoute, createPageRoute } = Cypress.env("endpoint");
 
 When("The user navigates to the page section", () => {
@@ -15,9 +17,8 @@ When("The user creates a new page whit tittle", () => {
   cy.url().should("contain", pageRoute);
   page.clickButtonNewPage();
   cy.url().should("contain", createPageRoute);
-  const pageTitle = "Titulo nuevo";
 
-  createPage.enterPageTittle(pageTitle);
+  createPage.enterPageTittle(newPage.title);
 
   cy.screenshot("New page title");
 
@@ -28,9 +29,8 @@ When("The user creates a new page whit message", () => {
   cy.url().should("contain", pageRoute);
   page.clickButtonNewPage();
   cy.url().should("contain", createPageRoute);
-  const pageMessage = "Mensaje nuevo";
 
-  createPage.enterPageMessage(pageMessage);
+  createPage.enterPageMessage(newPage.content);
 
   cy.screenshot("New page message");
 
@@ -41,13 +41,10 @@ When("The user creates a new page whit url", () => {
   cy.url().should("contain", pageRoute);
   page.clickButtonNewPage();
   cy.url().should("contain", createPageRoute);
-  const pageMessage = "Mensaje nuevo";
-  const pageTitle = "Titulo nuevo";
 
-  createPage.enterPageMessage(pageMessage);
-  createPage.enterPageTittle(pageTitle);
-
-  createPage.enterPageUrl();
+  createPage.enterPageMessage(newPage.content);
+  createPage.enterPageTittle(newPage.title);
+  createPage.enterPageUrl(newPage.url);
 
   createPage.clickButtonReturnPage();
 });
@@ -56,14 +53,11 @@ When("The user creates a new page change feature", () => {
   cy.url().should("contain", pageRoute);
   page.clickButtonNewPage();
   cy.url().should("contain", createPageRoute);
-  const pageMessage = "Mensaje nuevo";
-  const pageTitle = "Titulo nuevo";
 
-  createPage.enterPageMessage(pageMessage);
-  createPage.enterPageTittle(pageTitle);
+  createPage.enterPageMessage(newPage.content);
+  createPage.enterPageTittle(newPage.title);
 
   createPage.clickButtonFeaturePage();
-
   createPage.clickButtonReturnPage();
 });
 

@@ -5,6 +5,9 @@ import { post } from "../../pages/Post.Page";
 import { createPost } from "../../pages/Create.Post.Page";
 
 const { username, password } = Cypress.env("AdminUser");
+
+const { newPost, editedPost } = Cypress.env("dataPost");
+
 const { authLoginRoute, dashboardRoute, postRoute, createPostRoute } =
   Cypress.env("endpoint");
 
@@ -33,11 +36,9 @@ When("The user creates a new post", () => {
   cy.url().should("contain", postRoute);
   post.clickButtonNewPost();
   cy.url().should("contain", createPostRoute);
-  const postTitle = "Titulo nuevo";
-  const postContent = "Lorem ipsum dolor sit amet, consectetur";
 
-  createPost.enterPostTittle(postTitle);
-  createPost.enterPostMessage(postContent);
+  createPost.enterPostTittle(newPost.title);
+  createPost.enterPostMessage(newPost.content);
 
   cy.screenshot("New post");
 
@@ -45,12 +46,11 @@ When("The user creates a new post", () => {
 });
 
 When("The user modifies the newly created post", () => {
-  const postTitle = "Ttitulo editado"; // Genera un título aleatorio de 3 palabras
   cy.url().should("contain", postRoute);
   post.selectFirstPost();
 
   cy.url().should("contain", createPostRoute);
-  createPost.enterPostTittle(postTitle);
+  createPost.enterPostTittle(editedPost.title);
 
   cy.screenshot("New post modified");
 
@@ -68,7 +68,7 @@ When("The user canceled modifies post", () => {
 
 Then("The post is successfully edited.", () => {
   cy.url().should("contain", postRoute);
-  cy.get(post.get.listPost).should("contain", "Ttitulo editado");
+  cy.get(post.get.listPost).should("contain", editedPost.title);
 });
 
 Then("The post not changed", () => {

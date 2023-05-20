@@ -33,9 +33,9 @@ class CreatePage {
     this.get.buttonSettings().click();
   }
 
-  enterPageUrl() {
+  enterPageUrl(type) {
     this.get.buttonSettings().click();
-    this.get.inputUrlPage().type("localhost:3002/2");
+    this.get.inputUrlPage().type(type);
     cy.screenshot("New page url");
     this.get.menuSettings().scrollTo("bottom");
     this.get.menuCloseSetting().click();

@@ -45,5 +45,36 @@ module.exports = defineConfig({
       pageRoute: "/#/page",
       createPageRoute: "/#/editor/page",
     },
+    dataPost: {
+      newPost: {
+        title: "Post nuevo",
+        content: "Contenido del post nuevo",
+      },
+      editedPost: {
+        title: "Post editado",
+        content: "Contenido del post editado",
+      },
+    },
+    dataPage: {
+      newPage: {
+        title: "Pagina nueva",
+        content: "Contenido de la pagina nueva",
+        url: "localhost:3002/2",
+      },
+    },
+    dataTag: {
+      newTag: {
+        title: "Tag nuevo",
+        content: "Contenido del nuevo tag",
+        color: "4FB5ED",
+        slug: "Slug nuevo",
+      },
+      editedTag: {
+        title: "Tag editado",
+        content: "Contenido del tag editado",
+        color: "4FB5EE",
+        slug: "Slug editado",
+      },
+    },
   },
 });
