@@ -14,21 +14,21 @@ Scenario: Editar el titulo de una página creada
   And I wait for 2 seconds
   And I got to new page form
   And I wait for 2 seconds
-  And I edit the page content "new page title"
+  And I edit the page content "$name_1" and "$string_1"
   And I wait for 2 seconds
   And I publish the page
   And I wait for 10 seconds
   And I navigate to page "http://localhost:3002/ghost/#/pages"
   And I wait for 2 seconds
-  And I check the page with title "new page title"
+  And I check the page with title "$$name_1"
   And I wait for 2 seconds
-  When I go to page "new page title"
+  When I go to page "$$name_1"
   And I wait for 2 seconds
-  And I edit the title
+  And I edit the title "$name_2"
   And I publish the page
   And I navigate to page "http://localhost:3002/ghost/#/pages"
   And I wait for 2 seconds
-  Then I check the page with title "new page title v2"
+  Then I check the page with title "$$name_2"
   And I wait for 2 seconds
 
 @user2 @web
@@ -45,21 +45,21 @@ Scenario: Editar la descripción de una página creada
   And I wait for 2 seconds
   And I got to new page form
   And I wait for 2 seconds
-  And I edit the page content "new page description"
+  And I edit the page content "$name_3" and "$string_2"
   And I wait for 2 seconds
   And I publish the page
   And I wait for 5 seconds
   And I navigate to page "http://localhost:3002/ghost/#/pages"
   And I wait for 2 seconds
-  And I check the page with title "new page description"
+  And I check the page with title "$$name_3"
   And I wait for 2 seconds
-  When I go to page "new page description"
+  When I go to page "$$name_3"
   And I wait for 2 seconds
-  And I edit the description
+  And I edit the description "$string_3"
   And I publish the page
   And I navigate to page "http://localhost:3002/ghost/#/pages"
   And I wait for 2 seconds
-  Then I check the page with title "new page description"
+  Then I check the page with title "$$name_3"
   And I wait for 2 seconds
 
 @user3 @web
@@ -76,19 +76,19 @@ Scenario: Editar el url de una pagina creada
   And I wait for 2 seconds
   And I got to new page form
   And I wait for 2 seconds
-  And I edit the page content "new page url"
+  And I edit the page content "$name_4" and "$string_4"
   And I wait for 2 seconds
   And I publish the page
   And I wait for 5 seconds
   And I navigate to page "http://localhost:3002/ghost/#/pages"
   And I wait for 2 seconds
-  And I check the page with title "new page url"
+  And I check the page with title "$$name_4"
   And I wait for 2 seconds
-  When I go to page "new page url"
+  When I go to page "$$name_4"
   And I wait for 2 seconds
   And I click the settings page
   And I wait for 2 seconds
-  And I edit the page url
+  And I edit the page url "$url_1"
   And I wait for 5 seconds
   And I click the settings page
   And I wait for 5 seconds
@@ -96,7 +96,7 @@ Scenario: Editar el url de una pagina creada
   And I wait for 2 seconds
   And I navigate to page "http://localhost:3002/ghost/#/pages"
   And I wait for 2 seconds
-  Then I check the page with title "new page url"
+  Then I check the page with title "$$name_4"
   And I wait for 2 seconds
   And I open my user info
   And I wait for 1 seconds
@@ -117,15 +117,15 @@ Scenario: Editar una pagina creada y hacerla featured
   And I wait for 2 seconds
   And I got to new page form
   And I wait for 2 seconds
-  And I edit the page content "new page featured"
+  And I edit the page content "$name_5" and "$string_5"
   And I wait for 2 seconds
   And I publish the page
   And I wait for 5 seconds
   And I navigate to page "http://localhost:3002/ghost/#/pages"
   And I wait for 2 seconds
-  And I check the page with title "new page featured"
+  And I check the page with title "$$name_5"
   And I wait for 2 seconds
-  When I go to page "new page featured"
+  When I go to page "$$name_5"
   And I wait for 2 seconds
   And I click the settings page
   And I wait for 2 seconds
@@ -137,7 +137,7 @@ Scenario: Editar una pagina creada y hacerla featured
   And I wait for 2 seconds
   And I navigate to page "http://localhost:3002/ghost/#/pages"
   And I wait for 2 seconds
-  Then I check the page with title "new page featured"
+  Then I check the page with title "$$name_5"
   And I wait for 2 seconds
   And I open my user info
   And I wait for 1 seconds

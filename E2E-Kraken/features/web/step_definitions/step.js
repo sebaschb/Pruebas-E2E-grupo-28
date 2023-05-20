@@ -21,10 +21,9 @@ When('I got to new page form', async function() {
     return await element.click();
 })
 
-When('I edit the page content {kraken-string}', async function(title) {
+When('I edit the page content {kraken-string} and {kraken-string}', async function(title, content) {
     let elementTitle = await this.driver.$('.gh-editor-title');
     await elementTitle.setValue(title);
-    let content = "new page description"
     let elementContent = await this.driver.$(".koenig-editor__editor");
     return await elementContent.setValue(content);
 })
@@ -46,22 +45,19 @@ When('I go to page {kraken-string}', async function (title) {
     return await pageElement.click();
 })
 
-When('I edit the title', async function() {
-    let title = "new page title v2";
+When('I edit the title {kraken-string}', async function(title) {
     let elementTitle = await this.driver.$('textarea[class="gh-editor-title ember-text-area gh-input ember-view"]');
     await elementTitle.setValue(title);
     return await elementTitle.setValue(title);
 })
 
-When('I edit the description', async function() {
-    let content = "new page description v2"
+When('I edit the description {kraken-string}', async function(content) {
     let elementContent = await this.driver.$(".koenig-editor__editor");
     return await elementContent.setValue(content);
 })
 
 
-When('I edit the page url', async function() {
-    let url = "new-page-url-v2"
+When('I edit the page url {kraken-string}', async function(url) {
     let urlContent = await this.driver.$(".post-setting-slug");
     return await urlContent.setValue(url);
 })
@@ -79,7 +75,6 @@ When('I click the settings page', async function() {
     await element.click();
 })
 
-
 // Editar Tag
 
 When("I click on tags module", async function() {
@@ -92,9 +87,9 @@ When("I click on new tag", async function() {
   return await element.click();
 });
 
-When("I enter the tag name", async function () {
+When("I enter the tag name {kraken-string}", async function (tagName) {
   let element = await this.driver.$("#tag-name");
-  return await element.setValue("1 tag");
+  return await element.setValue(tagName);
 });
 
 Then("I save the tag", async function () {
@@ -102,31 +97,29 @@ Then("I save the tag", async function () {
   return await element.click();
 });
 
-When("I click on the created tag", async function() {
-  let element = await this.driver.$('.//*//h3[text()="1 tag"]');
+When("I click on the created tag {kraken-string}", async function(tagName) {
+  let element = await this.driver.$('.//*//h3[text()="'+tagName+'"]');
   return await element.click();
 });
 
-When("I edit the tag name", async function () {
-  let number = Math.floor(Math.random() * 100).toString();
+When("I edit the tag name {kraken-string}", async function (editedTagName) {
   let element = await this.driver.$("#tag-name");
-  return await element.setValue("tag editado " + number);
+  return await element.setValue(editedTagName);
 });
 
-When("I edit the tag slug", async function () {
-  let number = Math.floor(Math.random() * 100).toString();
+When("I edit the tag slug {kraken-string}", async function (slug) {
   let element = await this.driver.$("#tag-slug");
-  return await element.setValue("tag-" + number + "-editado");
+  return await element.setValue("tag-" + slug + "-editado");
 });
 
-When("I edit the tag description", async function () {
+When("I edit the tag description {kraken-string}", async function (description) {
   let element = await this.driver.$("#tag-description");
-  return await element.setValue("Se agrega descripción");
+  return await element.setValue(description);
 });
 
-When("I edit the tag color", async function () {
+When("I edit the tag color {kraken-string}", async function (color) {
   let element = await this.driver.$('input[name="accent-color"]');
-  return await element.setValue("4FB5ED");
+  return await element.setValue(color+"D");
 });
 
 When("I open my user info", async function() {
@@ -174,10 +167,9 @@ When('I go to new post form', async function() {
   return await element.click();
 })
 
-When('I edit the post content {kraken-string}', async function(title) {
+When('I edit the post content {kraken-string} and {kraken-string}', async function(title, content) {
   let elementTitle = await this.driver.$('.gh-editor-title');
   await elementTitle.setValue(title);
-  let content = "new page description"
   let elementContent = await this.driver.$(".koenig-editor__editor");
   return await elementContent.setValue(content);
 })

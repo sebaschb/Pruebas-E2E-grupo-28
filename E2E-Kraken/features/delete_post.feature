@@ -13,15 +13,15 @@ Scenario: Eliminar un post editado
   And I wait for 2 seconds
   And I go to new post form
   And I wait for 2 seconds
-  And I edit the post content "new post delete"
+  And I edit the post content "$name_1" and "$string_1"
   And I wait for 2 seconds
   And I publish the post
   And I wait for 5 seconds
   And I navigate to page "http://localhost:3002/ghost/#/posts"
   And I wait for 2 seconds
-  And I check the post with title "new post delete"
+  And I check the post with title "$$name_1"
   And I wait for 2 seconds
-  When I go to post "new post delete"
+  When I go to post "$$name_1"
   And I wait for 2 seconds
   And I click the post settings
   And I wait for 1 seconds
@@ -48,13 +48,13 @@ Scenario: Eliminar un post guardado como draft
   And I wait for 2 seconds
   And I go to new post form
   And I wait for 2 seconds
-  And I edit the post content "new post draft"
+  And I edit the post content "$name_2" and "$string_2"
   And I wait for 5 seconds
   And I navigate to page "http://localhost:3002/ghost/#/posts"
   And I wait for 2 seconds
-  And I check the post with title "new post draft"
+  And I check the post with title "$$name_2"
   And I wait for 2 seconds
-  When I go to post "new post draft"
+  When I go to post "$$name_2"
   And I wait for 2 seconds
   And I click the post settings
   And I wait for 1 seconds
@@ -70,7 +70,7 @@ Scenario: Eliminar un post guardado como draft
 @user3 @web
 Scenario: Eliminar el primer post de la lista de posts
   Given I navigate to page "http://localhost:3002/ghost/#/signin"
-  And I wait for 5 seconds
+  And I wait for 10 seconds
   And I enter email "<USERNAME>"
   And I wait for 2 seconds
   And I enter password "<PASSWORD>"

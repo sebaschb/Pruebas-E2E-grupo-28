@@ -14,15 +14,15 @@ Scenario: Editar el nombre del tag creado
   And I wait for 2 seconds
   And I click on new tag
   And I wait for 2 seconds
-  And I enter the tag name
+  And I enter the tag name "$name_1"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
   And I click on tags module
   And I wait for 2 seconds
-  And I click on the created tag
+  And I click on the created tag "$$name_1"
   And I wait for 2 seconds
-  And I edit the tag name
+  And I edit the tag name "$name_2"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
@@ -47,15 +47,15 @@ Scenario: Editar el slug del tag creado
   And I wait for 2 seconds
   And I click on new tag
   And I wait for 2 seconds
-  And I enter the tag name
+  And I enter the tag name "$name_3"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
   And I click on tags module
   And I wait for 2 seconds
-  And I click on the created tag
+  And I click on the created tag "$$name_3"
   And I wait for 2 seconds
-  And I edit the tag slug
+  And I edit the tag slug "$number_1"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
@@ -80,15 +80,15 @@ Scenario: Editar la descripcion del tag creado
   And I wait for 2 seconds
   And I click on new tag
   And I wait for 2 seconds
-  And I enter the tag name
+  And I enter the tag name "$name_4"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
   And I click on tags module
   And I wait for 2 seconds
-  And I click on the created tag
+  And I click on the created tag "$$name_4"
   And I wait for 2 seconds
-  And I edit the tag description
+  And I edit the tag description "$string_1"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
@@ -113,15 +113,15 @@ Scenario: Editar color del tag creado
   And I wait for 2 seconds
   And I click on new tag
   And I wait for 2 seconds
-  And I enter the tag name
+  And I enter the tag name "$name_5"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
   And I click on tags module
   And I wait for 2 seconds
-  And I click on the created tag
+  And I click on the created tag "$$name_5"
   And I wait for 2 seconds
-  And I edit the tag color
+  And I edit the tag color "$number_2"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
