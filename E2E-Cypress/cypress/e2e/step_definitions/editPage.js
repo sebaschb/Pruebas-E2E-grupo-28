@@ -3,6 +3,12 @@ import { home } from "../../pages/Home.Page";
 import { page } from "../../pages/Page.Page";
 import { createPage } from "../../pages/Create.Page.Page";
 
+let pageName = faker.name.jobTitle();
+let newMessage = faker.lorem.paragraph();
+let urlPage = faker.internet.url();
+
+import { faker } from '@faker-js/faker';
+
 const { dashboardRoute, pageRoute, createPageRoute } = Cypress.env("endpoint");
 
 When("The user navigates to the page section", () => {
@@ -15,7 +21,7 @@ When("The user creates a new page whit tittle", () => {
   cy.url().should("contain", pageRoute);
   page.clickButtonNewPage();
   cy.url().should("contain", createPageRoute);
-  const pageTitle = "Titulo nuevo";
+  const pageTitle = pageName;
 
   createPage.enterPageTittle(pageTitle);
 
@@ -28,7 +34,7 @@ When("The user creates a new page whit message", () => {
   cy.url().should("contain", pageRoute);
   page.clickButtonNewPage();
   cy.url().should("contain", createPageRoute);
-  const pageMessage = "Mensaje nuevo";
+  const pageMessage = newMessage;
 
   createPage.enterPageMessage(pageMessage);
 
@@ -41,13 +47,13 @@ When("The user creates a new page whit url", () => {
   cy.url().should("contain", pageRoute);
   page.clickButtonNewPage();
   cy.url().should("contain", createPageRoute);
-  const pageMessage = "Mensaje nuevo";
-  const pageTitle = "Titulo nuevo";
+  const pageMessage = newMessage;
+  const pageTitle = pageName;
 
   createPage.enterPageMessage(pageMessage);
   createPage.enterPageTittle(pageTitle);
 
-  createPage.enterPageUrl();
+  createPage.enterPageUrl(urlPage);
 
   createPage.clickButtonReturnPage();
 });
@@ -56,8 +62,8 @@ When("The user creates a new page change feature", () => {
   cy.url().should("contain", pageRoute);
   page.clickButtonNewPage();
   cy.url().should("contain", createPageRoute);
-  const pageMessage = "Mensaje nuevo";
-  const pageTitle = "Titulo nuevo";
+  const pageMessage = newMessage;
+  const pageTitle = pageName;
 
   createPage.enterPageMessage(pageMessage);
   createPage.enterPageTittle(pageTitle);

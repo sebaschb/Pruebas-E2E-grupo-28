@@ -4,6 +4,13 @@ import { home } from "../../pages/Home.Page";
 import { post } from "../../pages/Post.Page";
 import { createPost } from "../../pages/Create.Post.Page";
 
+import { faker } from '@faker-js/faker';
+
+
+let postName = faker.name.jobTitle();
+let editedPostName = faker.name.jobTitle();
+let tagDescription = faker.lorem.paragraph();
+
 const { username, password } = Cypress.env("AdminUser");
 const { authLoginRoute, dashboardRoute, postRoute, createPostRoute } =
   Cypress.env("endpoint");
@@ -33,8 +40,8 @@ When("The user creates a new post", () => {
   cy.url().should("contain", postRoute);
   post.clickButtonNewPost();
   cy.url().should("contain", createPostRoute);
-  const postTitle = "Titulo nuevo";
-  const postContent = "Lorem ipsum dolor sit amet, consectetur";
+  const postTitle = postName;
+  const postContent = tagDescription;
 
   createPost.enterPostTittle(postTitle);
   createPost.enterPostMessage(postContent);
@@ -45,7 +52,7 @@ When("The user creates a new post", () => {
 });
 
 When("The user modifies the newly created post", () => {
-  const postTitle = "Ttitulo editado"; // Genera un título aleatorio de 3 palabras
+  const postTitle = editedPostName; // Genera un título aleatorio de 3 palabras
   cy.url().should("contain", postRoute);
   post.selectFirstPost();
 
