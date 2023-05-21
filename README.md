@@ -77,9 +77,20 @@ npm run cypress:execution
 npm run cypress:runner //Esta opcion es para abrir la interfaz de cypress
 ```
 
+## Escenarios de validación de datos
+
+Para los escenarios de validacion de datos, se opto por realizar:
+
+1. pool de datos a-priori
+2. pool de datos (pseudo) aleatorio dinámico
+3. Escenario aleatorio
+
+Para cada una de estas configuraciones se realizo su respedctiva configuracion en una rama aparte. El nombre de la rama indica que configuracion tiene.
+
 ## Notas importantes
 
 Todos los miembros del equipo contribuyeron al código, excepto Andrés Silva.
 
 ## [Escenarios de pruebas](https://github.com/sebaschb/Pruebas-E2E-grupo-28/wiki/Escenarios-de-pruebas)
+
 ## [Registro de incidencias](https://github.com/sebaschb/Pruebas-E2E-grupo-28/wiki/registro-de-incidencias)
