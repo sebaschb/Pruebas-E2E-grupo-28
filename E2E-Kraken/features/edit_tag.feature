@@ -14,7 +14,7 @@ Scenario: Editar el nombre del tag creado
   And I wait for 2 seconds
   And I click on new tag
   And I wait for 2 seconds
-  And I enter the tag name
+  And I enter the tag name "<NEW_TAG_TITLE>"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
@@ -22,7 +22,7 @@ Scenario: Editar el nombre del tag creado
   And I wait for 2 seconds
   And I click on the created tag
   And I wait for 2 seconds
-  And I edit the tag name
+  And I edit the tag name "<EDITED_TAG_TITLE>"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
@@ -55,7 +55,7 @@ Scenario: Editar el slug del tag creado
   And I wait for 2 seconds
   And I click on the created tag
   And I wait for 2 seconds
-  And I edit the tag slug
+  And I edit the tag slug "<NEW_TAG_SLUG>"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
@@ -88,7 +88,7 @@ Scenario: Editar la descripcion del tag creado
   And I wait for 2 seconds
   And I click on the created tag
   And I wait for 2 seconds
-  And I edit the tag description
+  And I edit the tag description "<NEW_TAG_CONTENT>"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds
@@ -121,7 +121,7 @@ Scenario: Editar color del tag creado
   And I wait for 2 seconds
   And I click on the created tag
   And I wait for 2 seconds
-  And I edit the tag color
+  And I edit the tag color "<NEW_TAG_COLOR>"
   And I wait for 1 seconds
   And I save the tag
   And I wait for 2 seconds

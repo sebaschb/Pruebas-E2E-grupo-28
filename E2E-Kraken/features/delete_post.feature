@@ -13,15 +13,15 @@ Scenario: Eliminar un post editado
   And I wait for 2 seconds
   And I go to new post form
   And I wait for 2 seconds
-  And I edit the post content "new post delete"
+  And I edit the post content "<EDITED_POST_TITLE>" "<EDITED_POST_CONTENT>"
   And I wait for 2 seconds
   And I publish the post
   And I wait for 5 seconds
   And I navigate to page "http://localhost:3002/ghost/#/posts"
   And I wait for 2 seconds
-  And I check the post with title "new post delete"
+  And I check the post with title "<EDITED_POST_TITLE>"
   And I wait for 2 seconds
-  When I go to post "new post delete"
+  When I go to post "<EDITED_POST_TITLE>"
   And I wait for 2 seconds
   And I click the post settings
   And I wait for 1 seconds
@@ -48,13 +48,13 @@ Scenario: Eliminar un post guardado como draft
   And I wait for 2 seconds
   And I go to new post form
   And I wait for 2 seconds
-  And I edit the post content "new post draft"
+  And I edit the post content "<EDITED_POST_TITLE>" "<EDITED_POST_CONTENT>"
   And I wait for 5 seconds
   And I navigate to page "http://localhost:3002/ghost/#/posts"
   And I wait for 2 seconds
-  And I check the post with title "new post draft"
+  And I check the post with title "<EDITED_POST_TITLE>"
   And I wait for 2 seconds
-  When I go to post "new post draft"
+  When I go to post "<EDITED_POST_TITLE>"
   And I wait for 2 seconds
   And I click the post settings
   And I wait for 1 seconds

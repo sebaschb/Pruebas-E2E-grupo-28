@@ -1,4 +1,27 @@
 {
-    "USERNAME": "c.wilchesv@uniandes.edu.co",
-    "PASSWORD": "2TiSXG9VVvECnp"
+  "USERNAME": "c.wilchesv@uniandes.edu.co",
+  "PASSWORD": "2TiSXG9VVvECnp",
+
+  "NEW_POST_TITLE": "Post nuevo",
+  "NEW_POST_CONTENT": "Contenido del post nuevo",
+  "EDITED_POST_TITLE": "Post editado",
+  "EDITED_POST_CONTENT": "Contenido del post editado",
+  "EDITED_POST_TITLE_1": "Post editado 1",
+  "EDITED_POST_CONTENT_1": "Contenido del post editado 1",
+
+  "NEW_PAGE_TITLE": "Pagina nueva",
+  "NEW_PAGE_CONTENT": "Contenido de la pagina nueva",
+  "NEW_PAGE_URL": "localhost:3002/2",
+  "EDITED_PAGE_TITLE": "Pagina editada",
+  "EDITED_PAGE_CONTENT": "Contenido de la pagina editada",
+  "EDITED_PAGE_URL": "localhost:3002/2",
+
+  "NEW_TAG_TITLE": "Tag nuevo",
+  "NEW_TAG_CONTENT": "Contenido del nuevo tag",
+  "NEW_TAG_COLOR": "4FB5ED",
+  "NEW_TAG_SLUG": "Slug nuevo",
+  "EDITED_TAG_TITLE": "Tag editado",
+  "EDITED_TAG_CONTENT": "Contenido del tag editado",
+  "EDITED_TAG_COLOR": "4FB5EE",
+  "EDITED_TAG_SLUG": "Slug editado"
 }
