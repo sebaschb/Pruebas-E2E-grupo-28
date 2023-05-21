@@ -18,3 +18,10 @@ Feature: Delete post
         When The user chooses the first post from the post list
         When The user deletes the post
         Then The post is delete successfully
+
+    Scenario: Successfully delete a new post
+        When A user enters the username, the password, and clicks on the login button
+        When The user navigates to the post section
+        When The user creates a new post
+        When The user delete a new post
+        Then The post is delete successfully
