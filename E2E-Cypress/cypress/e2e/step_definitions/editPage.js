@@ -3,9 +3,9 @@ import { home } from "../../pages/Home.Page";
 import { page } from "../../pages/Page.Page";
 import { createPage } from "../../pages/Create.Page.Page";
 
-let pageName = faker.name.jobTitle();
-let newMessage = faker.lorem.paragraph();
-let urlPage = faker.internet.url();
+let pageName = faker.lorem.sentence();
+let newMessage = faker.lorem.sentence();
+let urlPage = faker.lorem.sentence();
 
 import { faker } from '@faker-js/faker';
 

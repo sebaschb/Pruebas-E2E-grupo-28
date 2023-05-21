@@ -8,8 +8,8 @@ import { faker } from '@faker-js/faker';
 
 
 let postName = faker.name.jobTitle();
-let editedPostName = faker.name.jobTitle();
-let tagDescription = faker.lorem.paragraph();
+let editedPostName = faker.lorem.sentence();
+let tagDescription = faker.lorem.sentence();
 
 const { username, password } = Cypress.env("AdminUser");
 const { authLoginRoute, dashboardRoute, postRoute, createPostRoute } =

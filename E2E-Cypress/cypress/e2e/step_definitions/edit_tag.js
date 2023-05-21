@@ -3,11 +3,11 @@ import { tag } from "../../pages/Tag.Page";
 
 import { faker } from '@faker-js/faker';
 
-let tagName = faker.name.jobTitle();
-let complement = faker.name.lastName();
+let tagName = faker.lorem.sentence();
+let complement = faker.lorem.sentence();
 let tagComplement = " " + complement;
-let tagColor = faker.color.rgb({ format: "hex", casing: "lower" }).replace("#","");
-let tagDescription = faker.lorem.paragraph();
+let tagColor = faker.lorem.sentence();
+let tagDescription = faker.lorem.sentence();
 
 const { dashboardRoute } = Cypress.env("endpoint");
 
